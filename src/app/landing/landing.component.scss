@@ -7,10 +7,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: beige;
+  flex-direction: column;
+  background-color: #FAFAFA;
 
   .login-content {
-    height: 300px;
-    width: 300px;
+    display: flex;
+    flex-direction: column !important;
+    width: 400px;
+  }
+
+  .login-button {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .logo-image {
+    width: 200px;
+    margin-bottom: 20px;
+
   }
 }
