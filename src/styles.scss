@@ -1,4 +1,3 @@
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 /** WARNING: Do NOT import this file in any component style */
 
 html, body {
@@ -16,11 +15,69 @@ body {
   box-sizing: border-box;
 }
 
-input {  /* stylelint-disable-line selector-no-type */
+input { /* stylelint-disable-line selector-no-type */
   border: none;
   background: none;
 }
 
 @mixin card {
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
+
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$mat-flowup: (
+        50: #0081d1,
+        100: #0081d1,
+        200: #0081d1,
+        300: #0081d1,
+        400: #0081d1,
+        500: #0081d1,
+        600: #0081d1,
+        700: #0081d1,
+        800: #0081d1,
+        900: #0081d1,
+        A100: #04a0ff,
+        A200: #04a0ff,
+        A400: #04a0ff,
+        A700: #04a0ff,
+        contrast: (
+                50: $black-87-opacity,
+                100: $black-87-opacity,
+                200: $black-87-opacity,
+                300: white,
+                400: white,
+                500: $white-87-opacity,
+                600: $white-87-opacity,
+                700: $white-87-opacity,
+                800: $white-87-opacity,
+                900: $white-87-opacity,
+                A100: $black-87-opacity,
+                A200: white,
+                A400: white,
+                A700: $white-87-opacity,
+        )
+);
+
+$candy-app-primary: mat-palette($mat-flowup);
+$candy-app-accent: mat-palette($mat-flowup, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$candy-app-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($candy-app-theme);
