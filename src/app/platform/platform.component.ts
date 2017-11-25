@@ -9,10 +9,10 @@ import { Router } from '@angular/router';
 export class PlatformComponent {
 
   menuRoutes: { route: string, icon: string, label: string }[] = [
-    {route: 'dashboard', icon: 'dashboard', label: 'Nastenka'},
-    {route: 'issues', icon: 'question_answer', label: 'Problemy'},
-    {route: 'projects', icon: 'list', label: 'Projekty'},
-    {route: 'solutions', icon: 'build', label: 'Reseni'},
+    // {route: 'dashboard', icon: 'dashboard', label: 'Nastenka'},
+    {route: 'issues', icon: 'feedback', label: 'Problémy'},
+    {route: 'projects', icon: 'dashboard', label: 'Projekty'},
+    {route: 'solutions', icon: 'info', label: 'Řešení'},
   ];
 
   constructor(private router: Router) {
