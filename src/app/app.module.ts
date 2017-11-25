@@ -10,10 +10,7 @@ import { IssuesComponent } from './platform/issues/issues.component';
 import { ProjectsComponent } from './platform/projects/projects.component';
 import { SolutionsComponent } from './platform/solutions/solutions.component';
 import { FormsModule } from '@angular/forms';
-import {
-  MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule,
-  MatToolbarModule
-} from '@angular/material';
+import { MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
 
 
 @NgModule({
@@ -32,6 +29,7 @@ import {
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    MatSidenavModule,
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,

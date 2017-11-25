@@ -1,3 +1,29 @@
-<p>
-  platform works!
-</p>
+<mat-sidenav-container class="sidenav-container">
+  <mat-toolbar class="toolbar">
+    <button mat-icon-button (click)="sideNav.open()">
+      <i class="material-icons">menu</i>
+    </button>
+    <div class="toolbar-profile">
+      <div class="profile-name">Albert Uchytil</div>
+      <button mat-icon-button (click)="logout()">
+        <i class="material-icons">power_settings_new</i>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav #sideNav>
+    <div class="nav-bar-header">
+      <i class="material-icons">pets</i>
+      <div class="nav-bar-header-label">EPIC APP</div>
+    </div>
+    <div class="nav-bar-item" *ngFor="let item of menuRoutes" [routerLink]="item.route" (click)="sideNav.close()">
+      <i class="material-icons">{{ item.icon }}</i>
+      <div class="nav-bar-item-label">{{ item.label }}</div>
+    </div>
+  </mat-sidenav>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+
+</mat-sidenav-container>

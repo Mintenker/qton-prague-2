@@ -1,0 +1,59 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .toolbar-profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .profile-name {
+      font-size: 14px;
+    }
+  }
+}
+
+.content {
+  min-height: calc(100vh - 64px);
+  min-width: 100%;
+  background-color: beige;
+  padding: 24px;
+}
+
+.sidenav-container {
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.nav-bar-header {
+  padding: 36px;
+  width: 100%;
+  cursor: default;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(black, 0.5);
+
+  .nav-bar-header-label {
+    margin-left: 12px;
+  }
+}
+
+.nav-bar-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 18px;
+  width: 600px;
+  cursor: pointer;
+
+  .nav-bar-item-label {
+    font-size: 16px;
+    margin-left: 16px;
+  }
+
+  &:hover {
+    font-weight: bold;
+  }
+}
