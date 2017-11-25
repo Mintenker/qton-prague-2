@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('qton-prague2 App', () => {
+describe('qton-prague App', () => {
   let page: AppPage;
 
   beforeEach(() => {
