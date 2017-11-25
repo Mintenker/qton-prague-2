@@ -1,15 +1,15 @@
 <div class="solutions-container">
 
-  <mat-card class="solution" *ngFor="let item of [0,1,2,3,4,5,6,7,8,9,10,11,12]">
+  <mat-card class="solution" *ngFor="let solution of solutions">
     <div class="solution-header">
       <img src="assets/images/smart-city-mock.jpg" class="solution-image">
-      <mat-card-title class="solution-title">Title</mat-card-title>
+      <mat-card-title class="solution-title">{{solution.title}}</mat-card-title>
     </div>
     <div class="solution-content">
-      <div class="solution-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+      <div class="solution-description">{{solution.description}}</div>
       <div class="solution-bottom-info">
-        <div class="solution-location">Praha</div>
-        <div class="solution-budget">20.000 CZK</div>
+        <div class="solution-location">{{solution.location}}</div>
+        <div class="solution-budget">{{solution.budget  | number}} CZK</div>
       </div>
     </div>
   </mat-card>
