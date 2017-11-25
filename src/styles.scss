@@ -1,3 +1,4 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 /** WARNING: Do NOT import this file in any component style */
 
 html, body {
@@ -18,4 +19,8 @@ body {
 input {  /* stylelint-disable-line selector-no-type */
   border: none;
   background: none;
+}
+
+@mixin card {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
