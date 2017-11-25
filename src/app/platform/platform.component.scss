@@ -1,7 +1,15 @@
+@import '_variables';
+
 .toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: $primary-color;
+  color: $contrast-color;
+
+  .toolbar-logo {
+    height: 90%;
+  }
 
   .toolbar-profile {
     display: flex;
@@ -9,7 +17,8 @@
     align-items: center;
 
     .profile-name {
-      font-size: 14px;
+      font-size: 16px;
+      margin-right: 12px;
     }
   }
 }
@@ -21,39 +30,30 @@
   padding: 24px;
 }
 
-.sidenav-container {
-  min-height: 100%;
-  min-width: 100%;
-}
-
-.nav-bar-header {
-  padding: 36px;
-  width: 100%;
-  cursor: default;
-  user-select: none;
+.menu-items {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(black, 0.5);
+  height: 100%;
 
-  .nav-bar-header-label {
-    margin-left: 12px;
-  }
-}
+  .menu-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 12px;
+    height: 100%;
+    cursor: pointer;
+    text-transform: uppercase;
 
-.nav-bar-item {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 18px;
-  width: 300px;
-  cursor: pointer;
+    .menu-item-label {
+      font-size: 16px;
+    }
 
-  .nav-bar-item-label {
-    font-size: 16px;
-    margin-left: 16px;
-  }
+    &.active {
 
-  &:hover {
-    font-weight: bold;
+    }
+
+    &:hover {
+      background-color: rgba(white, 0.1);
+    }
   }
 }

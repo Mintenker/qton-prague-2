@@ -68,16 +68,16 @@ $mat-flowup: (
         )
 );
 
-$candy-app-primary: mat-palette($mat-flowup);
-$candy-app-accent: mat-palette($mat-flowup, A200, A100, A400);
+$city-ideas-primary: mat-palette($mat-flowup);
+$city-ideas-accent: mat-palette($mat-flowup, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$candy-app-warn: mat-palette($mat-red);
+$city-ideas-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+$city-ideas-theme: mat-light-theme($city-ideas-primary, $city-ideas-accent, $city-ideas-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($candy-app-theme);
+@include angular-material-theme($city-ideas-theme);

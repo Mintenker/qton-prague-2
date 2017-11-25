@@ -20,7 +20,7 @@ export class LandingComponent {
 
   onLoginClick(): void {
     if (this.password === PASSWORD && this.login === LOGIN) {
-      this.router.navigateByUrl('platform/dashboard');
+      this.router.navigateByUrl('platform');
     } else {
       this.passwordFail = true;
       console.error('wrong login');

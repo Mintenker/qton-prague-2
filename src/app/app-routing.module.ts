@@ -15,11 +15,10 @@ const routes: Routes = [{
       path: 'platform',
       component: PlatformComponent,
       children: [
-        {path: 'dashboard', component: DashboardComponent},
         {path: 'issues', component: IssuesComponent},
         {path: 'projects', component: ProjectsComponent},
         {path: 'solutions', component: SolutionsComponent},
-        {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+        {path: '', redirectTo: 'issues', pathMatch: 'full'},
       ]
     },
     {path: '**', redirectTo: 'landing'},
