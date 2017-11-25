@@ -1,5 +1,8 @@
 <mat-toolbar class="toolbar">
-  <img class="toolbar-logo" src="assets/images/logo-white.png">
+  <div class="toolbar-logo-container">
+    <img class="toolbar-logo" src="assets/images/logo-white.png">
+
+  </div>
 
   <div class="menu-items">
     <div class="menu-item" *ngFor="let item of menuRoutes" [routerLink]="item.route" routerLinkActive="active">

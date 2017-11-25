@@ -1,0 +1,65 @@
+@import '_variables';
+
+$solution-card-height: 400px;
+$solution-card-width: 300px;
+
+$solution-image-height: 250px;
+
+.solutions-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 18%;
+}
+
+.solution {
+  height: $solution-card-height;
+  width: $solution-card-width;
+  padding: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  margin: 12px;
+
+  &:hover {
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
+
+  .solution-header {
+    width: 100%;
+    height: $solution-image-height;
+    position: relative;
+
+    .solution-image {
+      height: 100%;
+      width: 100%;
+    }
+
+    .solution-title {
+      position: absolute;
+      bottom: 10px;
+      left: 24px;
+      color: $contrast-color;
+      font-weight: bold;
+    }
+  }
+
+  .solution-content {
+    color: black;
+    height: calc(100% - #{$solution-image-height});
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .solution-description {
+
+    }
+
+    .solution-bottom-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
