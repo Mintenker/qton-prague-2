@@ -95,7 +95,7 @@ export const MOCK_PROJECTS: ProjectModel[] = [
         location: 'Brno',
         budget: 5000000,
         budgetCurrency: 'CZK',
-        description: 'Oživení městkého parku v Brně formou ',
+        description: 'Oživení městkého parku v Brně formou chytrych lavicek',
         longDescription: '\n' +
         'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam sed tellus id magna elementum tincidunt. ' +
         'Nulla accumsan, elit sit amet varius semper, nulla mauris mollis quam, tempor suscipit diam nulla vel leo. ' +
@@ -131,7 +131,7 @@ export const MOCK_PROJECTS: ProjectModel[] = [
         location: 'Dolní horní',
         budget: 15000000,
         budgetCurrency: 'CZK',
-        description: '',
+        description: 'Rekonstrukce namesti a relizace noveho parkoviste s chytrym parkovacim systemem',
         longDescription: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam sed tellus id magna elementum tincidunt. ' +
         'Nulla accumsan, elit sit amet varius semper, nulla mauris mollis quam, tempor suscipit diam nulla vel leo. ' +
         'Sed ac dolor sit amet purus malesuada congue. Nullam faucibus mi quis velit. Duis sapien nunc, commodo et,' +
@@ -144,12 +144,12 @@ export const MOCK_PROJECTS: ProjectModel[] = [
 
     {
         id: 3,
-        name: 'Sanitární zázemí',
+        name: 'Chytre osvetleni ulice Zamecka',
         status: 'in_progress',
         location: 'Ostrava',
         budget: 15000000,
         budgetCurrency: 'CZK',
-        description: '',
+        description: 'Pilotni projekt na ulici Zamecka',
         longDescription:
         'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam sed tellus id magna elementum tincidunt. ' +
         'Nulla accumsan, elit sit amet varius semper, nulla mauris mollis quam, tempor suscipit diam nulla vel leo. ' +
@@ -168,7 +168,7 @@ export const MOCK_PROJECTS: ProjectModel[] = [
         location: 'Praha',
         budget: 15000000,
         budgetCurrency: 'CZK',
-        description: '',
+        description: 'Nutnost reseni noveho dopravniho uzlu',
         longDescription: '\n' +
         'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam sed tellus id magna elementum tincidunt. ' +
         'Nulla accumsan, elit sit amet varius semper, nulla mauris mollis quam, tempor suscipit diam nulla vel leo. ' +
