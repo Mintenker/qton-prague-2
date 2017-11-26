@@ -1,0 +1,46 @@
+@import '_variables';
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 18%;
+
+  .project {
+    display: flex;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin: 12px;
+    padding: 16px;
+    cursor: pointer;
+    width: 100%;
+
+    &:hover {
+      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    }
+
+    .project-status-icon {
+      font-size: 50px;
+      color: #cccccc;
+    }
+
+    .project-content {
+      width: 100%;
+      margin-left: 24px;
+
+      .project-title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .project-location {
+        font-size: 14px;
+      }
+
+
+      .project-description {
+
+      }
+    }
+  }
+}
