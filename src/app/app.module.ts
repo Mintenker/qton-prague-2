@@ -18,6 +18,7 @@ import { SolutionDetailComponent } from './platform/solutions/solution-detail/so
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { ProjectDetailComponent } from './platform/projects/project-detail/project-detail.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     IssuesComponent,
     ProjectsComponent,
     SolutionsComponent,
-    SolutionDetailComponent
+    SolutionDetailComponent,
+    ProjectDetailComponent
   ],
   imports: [
     BrowserModule,

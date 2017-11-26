@@ -1,0 +1,39 @@
+.pd-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .project-detail {
+    width: 50%;
+    min-width: 300px;
+
+    .pd-first-row {
+      display: flex;
+
+      .pd-status-item {
+        font-size: 50px;
+        color: #cccccc;
+      }
+
+      .pd-header {
+        margin-left: 20px;
+
+        .pd-title {
+          margin-bottom: 12px;
+        }
+
+        .pd-subtitle {
+          display: flex;
+          align-items: center;
+
+          .pd-category {
+            margin-left: 24px;
+            border-radius: 10px;
+            font-size: 14px;
+            padding: 8px;
+          }
+        }
+      }
+    }
+  }
+}
