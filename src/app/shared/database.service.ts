@@ -8,6 +8,7 @@ export class DatabaseService {
   $issues = new ReplaySubject<any[]>(1);
   $keywords = new ReplaySubject<any>(1);
   $sources = new ReplaySubject<any[]>(1);
+  $sourcesNew = new ReplaySubject<any[]>(1);
 
   constructor(private db: AngularFirestore) {
 
@@ -42,6 +43,16 @@ export class DatabaseService {
       data => {
         if (data != null) {
           this.$sources.next(data);
+        }
+      }
+    );
+  }
+
+  getSourcesInProgress(): void {
+    this.db.collection('sources').valueChanges().subscribe(
+      data => {
+        if (data != null) {
+          this.$sourcesNew.next(data);
         }
       }
     );

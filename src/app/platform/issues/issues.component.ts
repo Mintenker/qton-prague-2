@@ -21,11 +21,15 @@ export class IssuesComponent {
   sources: {
     source: string;
   }[] = [];
+  sourcesNew: {
+    source: string;
+  }[] = [];
 
   constructor(private service: DatabaseService) {
     this.service.getIssues();
     this.service.getKeywords();
     this.service.getSources();
+    this.service.getSourcesInProgress();
 
     this.service.$issues.subscribe(
       data => {
@@ -42,6 +46,12 @@ export class IssuesComponent {
     this.service.$sources.subscribe(
       data => {
         this.sources = data;
+      }
+    );
+
+    this.service.$sourcesNew.subscribe(
+      data => {
+        this.sourcesNew = data;
       }
     );
   }
