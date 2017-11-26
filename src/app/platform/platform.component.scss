@@ -1,59 +1,77 @@
+@import '_variables';
+
+$toolbar-height: 80px;
+
 .toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: $primary-color;
+  color: $contrast-color;
+  height: $toolbar-height;
+
+  .toolbar-logo-container {
+    flex-grow: 1;
+    flex-basis: 33%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    user-select: none;
+
+    .toolbar-logo {
+      height: 90%;
+    }
+  }
 
   .toolbar-profile {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    height: 100%;
+    flex-grow: 1;
+    flex-basis: 33%;
 
     .profile-name {
-      font-size: 14px;
+      font-size: 16px;
+      margin-right: 12px;
     }
   }
 }
 
 .content {
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh - #{$toolbar-height});
   min-width: 100%;
-  background-color: beige;
+  background-color: #FAFAFA;
   padding: 24px;
 }
 
-.sidenav-container {
-  min-height: 100%;
-  min-width: 100%;
-}
-
-.nav-bar-header {
-  padding: 36px;
-  width: 100%;
-  cursor: default;
-  user-select: none;
+.menu-items {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(black, 0.5);
+  justify-content: center;
+  height: 100%;
+  flex-grow: 1;
+  flex-basis: 33%;
 
-  .nav-bar-header-label {
-    margin-left: 12px;
-  }
-}
+  .menu-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 16px;
+    height: 100%;
+    cursor: pointer;
+    text-transform: uppercase;
 
-.nav-bar-item {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 18px;
-  width: 600px;
-  cursor: pointer;
+    .menu-item-label {
+      font-size: 20px;
+    }
 
-  .nav-bar-item-label {
-    font-size: 16px;
-    margin-left: 16px;
-  }
+    &.active {
 
-  &:hover {
-    font-weight: bold;
+    }
+
+    &:hover {
+      background-color: rgba(white, 0.1);
+    }
   }
 }

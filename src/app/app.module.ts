@@ -11,6 +11,7 @@ import { ProjectsComponent } from './platform/projects/projects.component';
 import { SolutionsComponent } from './platform/solutions/solutions.component';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
+import { SolutionDetailComponent } from './platform/solutions/solution-detail/solution-detail.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, Mat
     DashboardComponent,
     IssuesComponent,
     ProjectsComponent,
-    SolutionsComponent
+    SolutionsComponent,
+    SolutionDetailComponent
   ],
   imports: [
     BrowserModule,

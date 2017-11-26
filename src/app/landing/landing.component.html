@@ -1,14 +1,14 @@
 <div class="landing-background">
-  <mat-card class="login-content">
-    <mat-card-title>
-      EPIC APP
-    </mat-card-title>
-    <mat-form-field>
-      <input matInput [(ngModel)]="login" placeholder="Jmeno" (keyup.enter)="onLoginClick()">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput [(ngModel)]="password" type="password" placeholder="Heslo" (keyup.enter)="onLoginClick()">
-    </mat-form-field>
-    <button mat-raised-button color="primary" (click)="onLoginClick()">Prihlasit se</button>
-  </mat-card>
+
+    <img class="logo-image" src="assets/images/logo.png">
+
+    <mat-card class="login-content">
+        <mat-form-field>
+            <input matInput [(ngModel)]="login" placeholder="Jméno" (keyup.enter)="onLoginClick()">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput [(ngModel)]="password" type="password" placeholder="Heslo" (keyup.enter)="onLoginClick()">
+        </mat-form-field>
+        <button mat-raised-button color="primary" class="login-button" (click)="onLoginClick()">Přihlásit se</button>
+    </mat-card>
 </div>

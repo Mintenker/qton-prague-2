@@ -1,29 +1,25 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-toolbar class="toolbar">
-    <button mat-icon-button (click)="sideNav.open()">
-      <i class="material-icons">menu</i>
-    </button>
-    <div class="toolbar-profile">
-      <div class="profile-name">Albert Uchytil</div>
-      <button mat-icon-button (click)="logout()">
-        <i class="material-icons">power_settings_new</i>
-      </button>
-    </div>
-  </mat-toolbar>
+<mat-toolbar class="toolbar">
+  <div class="toolbar-logo-container">
+    <img class="toolbar-logo" src="assets/images/logo-white.png">
 
-  <mat-sidenav #sideNav>
-    <div class="nav-bar-header">
-      <i class="material-icons">pets</i>
-      <div class="nav-bar-header-label">EPIC APP</div>
-    </div>
-    <div class="nav-bar-item" *ngFor="let item of menuRoutes" [routerLink]="item.route" (click)="sideNav.close()">
-      <i class="material-icons">{{ item.icon }}</i>
-      <div class="nav-bar-item-label">{{ item.label }}</div>
-    </div>
-  </mat-sidenav>
-
-  <div class="content">
-    <router-outlet></router-outlet>
   </div>
 
-</mat-sidenav-container>
+  <div class="menu-items">
+    <div class="menu-item" *ngFor="let item of menuRoutes" [routerLink]="item.route" routerLinkActive="active">
+      <div class="menu-item-label">{{ item.label }}</div>
+    </div>
+  </div>
+
+  <div class="toolbar-profile">
+    <div class="profile-name">Starosta Maková Lhota</div>
+    <button mat-icon-button (click)="logout()">
+      <i class="material-icons">power_settings_new</i>
+    </button>
+  </div>
+</mat-toolbar>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+
+
