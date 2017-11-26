@@ -1,8 +1,8 @@
 import time
 import firebase_admin
 import requests
-from firebase_admin import credentials
-from firebase_admin import db
+from google.cloud import firestore
+from google import api_core
 import fbparser
 import postpreprocessor as ppp
 from datasketch import MinHashLSH
@@ -23,41 +23,64 @@ lsh = MinHashLSH(
       'redis': {'host': 'localhost', 'port': 6379}
    })
 
-# cred = credentials.Certificate('path/to/serviceAccountKey.json')
-# default_app = firebase_admin.initialize_app(cred)
+db = firestore.Client()
+issues_ref = db.collection(u'issues')
+keywords_ref = db.collection(u'keywords')
+sourcesnew_ref = db.collection(u'sources')
+sourcescom_ref = db.collection(u'complete')
 
-# default_app = firebase_admin.initialize_app()
+def runito(): 
+  while True:
+    items = sourcesnew_ref.get()
+    for item in items:
+      processSource(item.to_dict()["source"])
+      sourcesnew_ref.document(item.id).delete()
+      sourcescom_ref.document(item.id).set(item.to_dict())
 
-# ref = db.reference('/some_resource')
-# print(ref.get())
+    time.sleep(3)
 
-# ('123822671018049_1538738372859798', 'Omezení pálení listí jako jeden z brněnských kroků na cestě k čistějšímu ovzduší. Pomůže?', '', 'video', 'https://www.facebook.com/udalostibrno/videos/1538738372859798/', '2017-11-07 08:17:54', 34, 12, 3, 19, 2, 0, 13, 0, 0)
-def runito():  
-  fuckin_firebase_result = ["udalostibrno"]
-  if len(fuckin_firebase_result) > 0:
-    since_date = "2017-09-25"
-    until_date = "2017-11-25"
-    request_posts = dict()
-    for post in fbparser.scrapePage(fuckin_firebase_result[0], access_token, since_date, until_date):
-      if not ppp.isValid(post):
-        continue
-      
-      post["minhash"] = ppp.getMinHash(post, minhash_size)
-      lsh.insert(post['status_id'], post['minhash'])
-      post["similar"] = lsh.query(post['minhash'])
-      post["similar"].remove(post["status_id"])
-      del post["minhash"]
 
-      status_id = post['status_id']
-      del post['status_id']
-      request_posts[status_id] = post
+def processSource(source):
+  since_date = "2017-09-25"
+  until_date = "2017-11-25"
+  request_posts = dict()
+  for post in fbparser.scrapePage(source, access_token, since_date, until_date):
+    if not ppp.isValid(post):
+      continue
+    
+    post["minhash"] = ppp.getMinHash(post, minhash_size)
+    lsh.insert(post['status_id'], post['minhash'])
+    post["similar"] = lsh.query(post['minhash'])
+    post["similar"].remove(post["status_id"])
+    del post["minhash"]
 
-      if len(request_posts) == posts_per_requests:
-        bomber.makePost(collector_endpoint, request_posts)
-        request_posts = dict()
+    status_id = post['status_id']
+    del post['status_id']
 
-    if len(request_posts) != 0:
-      bomber.makePost(collector_endpoint, request_posts)
+    post["keywords"] = list()
 
-  time.sleep(3)
+    for kw_pair in post["keyword_pairs"]:
+      data = {}
+      try:
+        snap = keywords_ref.document(kw_pair).get()
+        if not snap.exists:
+          raise api_core.exceptions.NotFound
+
+        data = snap.to_dict()
+        data["n"] += 1
+
+        if len(data["val"]) > len(post["keyword_pairs"][kw_pair]):
+          data.val = post["keyword_pairs"][kw_pair]
+
+      except api_core.exceptions.NotFound:
+        data = { "val": post["keyword_pairs"][kw_pair], "n": 1}
+      except AttributeError:
+        print(data)
+
+      keywords_ref.document(kw_pair).set(data)
+      post["keywords"].append(kw_pair)
+    
+    del post["keyword_pairs"]
+
+    issues_ref.document(status_id).set(post)
 runito()

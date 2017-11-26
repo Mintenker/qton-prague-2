@@ -10,17 +10,26 @@ def isValid(post):
         return False
 
 def decodeWord(word):
-    word = word.translate(str.maketrans("", "", string.punctuation))
+    word = removePunctuation(word)
     decoded = unidecode.unidecode(word)
     return decoded.lower()
+
+def removePunctuation(word):
+    return word.translate(str.maketrans("", "", string.punctuation))
 
 def getMinHash(post, size):
     mh = MinHash(num_perm=size)
     words = post["status_message"].split(" ")
+    post['keyword_pairs'] = dict()
     for word in words:
+        if len(word) == 0 or word[0].isupper():
+            continue
+
         dw = decodeWord(word)
         if len(dw) > 5 and len(dw) < 20:
-            mh.update(makeKeyword(dw).encode('utf8'))
+            kw = makeKeyword(dw)
+            post['keyword_pairs'][kw] = removePunctuation(word)
+            mh.update(kw.encode('utf8'))
     return mh
 
 def makeKeyword(word):
@@ -33,6 +42,18 @@ def makeKeyword(word):
     if word.endswith("eho"):
         return word[:-3]
     if word.endswith("ymi"):
+        return word[:-3]
+    if word.endswith("imi"):
+        return word[:-3]
+    if word.endswith("ich"):
+        return word[:-3]
+    if word.endswith("ana"):
+        return word[:-3]
+    if word.endswith("ani"):
+        return word[:-3]
+    if word.endswith("ane"):
+        return word[:-3]
+    if word.endswith("ech"):
         return word[:-3]
     if word.endswith("ych"):
         return word[:-3]
