@@ -10,16 +10,16 @@ export interface ProjectModel {
   budgetCurrency: string;
   description: string;
   longDescription: string;
-  issues: {
+  issues?: {
     fkIssue: number;
     comments: CommentModel[];
   }[];
-  solutions: {
+  solutions?: {
     fkSolution: number;
     comments: CommentModel[];
     result: ResultModel;
   };
-  documents: {
+  documents?: {
     name: string;
     link: string;
   }[];

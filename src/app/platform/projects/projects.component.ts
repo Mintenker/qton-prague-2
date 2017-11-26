@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-projects',
@@ -6,4 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent {
+
+  constructor(private router: Router) {
+
+  }
+
+  redirectToDetail(id: number): void {
+    this.router.navigateByUrl(`platform/projects/${id}`);
+  }
 }

@@ -1,4 +1,5 @@
 import {SolutionModel} from './solution.model';
+import {ProjectModel} from './project.model';
 
 export const MOCK_SOLUTIONS: SolutionModel[] = [
     {
@@ -83,3 +84,29 @@ export const MOCK_SOLUTIONS: SolutionModel[] = [
         image: 'assets/images/doprava.jpg'
     },
 ];
+
+export const MOCK_PROJECTS: ProjectModel[] = [
+    {
+        id: 1,
+        name: 'Revitalizace parku v Lužánkách',
+        status: 'dokončeno',
+        location: 'Brno',
+        budget: 5000000,
+        budgetCurrency: 'CZK',
+        description: '',
+        longDescription: '',
+    },
+
+    {
+        id: 1,
+        name: 'Rekonstrukce naměstí',
+        status: 'probíhá realizace',
+        location: 'Dolní horní',
+        budget: 15000000,
+        budgetCurrency: 'CZK',
+        description: '',
+        longDescription: '',
+    },
+];
+
+
