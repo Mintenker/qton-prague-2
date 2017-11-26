@@ -23,6 +23,9 @@ export class IssuesComponent {
   }
 
   getKeywords(issue: IssueModel): string[] {
+    if (issue.keywords == null) {
+      return [];
+    }
     return Object.keys(issue.keywords).map((key: string) => issue.keywords[key]);
   }
 }
