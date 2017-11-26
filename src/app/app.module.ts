@@ -12,7 +12,7 @@ import { SolutionsComponent } from './platform/solutions/solutions.component';
 import { FormsModule } from '@angular/forms';
 import {
   MatButtonModule, MatCardModule, MatChipsModule, MatFormFieldModule, MatInputModule, MatListModule, MatSidenavModule,
-  MatToolbarModule
+  MatToolbarModule, MatExpansionModule, MatSelectModule,
 } from '@angular/material';
 import { SolutionDetailComponent } from './platform/solutions/solution-detail/solution-detail.component';
 import { AngularFireModule } from 'angularfire2';
@@ -46,6 +46,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     MatCardModule,
     MatListModule,
     MatChipsModule,
+    MatExpansionModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
