@@ -1,4 +1,69 @@
 <div *ngIf="solution != null">
-  Solution --> ID: {{solution.id}}, Name: {{solution.title}}
-  <button mat-raised-button color="primary" (click)="redirectToList()">Back</button>
+    Solution --> ID: {{solution.id}}, Name: {{solution.title}}
+    <button mat-raised-button color="primary" (click)="redirectToList()">Back</button>
+
+    <mat-card class="card">
+        <div class="solution-header">
+            <mat-card-title class="solution-title">{{solution.title}}</mat-card-title>
+        </div>
+        {{solution.description}}
+
+        <div class="solution-content">
+            <table style="width:100%">
+                <tr>
+                    <th rowspan="6" width="50%"><img src={{solution.image}} class="image"></th>
+                    <th></th>
+                    <th>souhrn</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>cena realizace</th>
+                    <th>{{solution.budget}} CZK</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>rok realizace</th>
+                    <th>{{solution.year}}</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>stav realizace</th>
+                    <th>{{solution.status}}</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>lokalita</th>
+                    <th>{{solution.location}}</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>kategorie</th>
+                    <th>{{solution.category}}</th>
+                </tr>
+            </table>
+        </div>
+        <mat-form-field>
+            <input matInput placeholder="Popis" disabled value={{solution.longDescription}}>
+        </mat-form-field>
+
+        <table style="width:100%">
+            <tr>
+                <th rowspan="6" width="50%"></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th><mat-form-field>
+                    <input matInput placeholder="Realizator" disabled value="blabla">
+                </mat-form-field></th>
+                <th><mat-form-field>
+                    <input matInput placeholder="Zadavatel" disabled value="blabla">
+                </mat-form-field></th>
+            </tr>
+        </table>
+
+
+    </mat-card>
+
 </div>
