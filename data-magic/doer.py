@@ -37,7 +37,7 @@ def runito():
   if len(fuckin_firebase_result) > 0:
     since_date = "2017-09-25"
     until_date = "2017-11-25"
-    request_posts = list()
+    request_posts = dict()
     for post in fbparser.scrapePage(fuckin_firebase_result[0], access_token, since_date, until_date):
       if not ppp.isValid(post):
         continue
@@ -48,10 +48,13 @@ def runito():
       post["similar"].remove(post["status_id"])
       del post["minhash"]
 
-      request_posts.append(post)
+      status_id = post['status_id']
+      del post['status_id']
+      request_posts[status_id] = post
+
       if len(request_posts) == posts_per_requests:
         bomber.makePost(collector_endpoint, request_posts)
-        request_posts = list()
+        request_posts = dict()
 
     if len(request_posts) != 0:
       bomber.makePost(collector_endpoint, request_posts)

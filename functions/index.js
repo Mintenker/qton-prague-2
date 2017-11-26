@@ -8,9 +8,7 @@ const db = admin.database()
 exports.collect = functions.https.onRequest((req, res) => {
     const issues = db.ref('issues')
 
-    req.body.forEach((i) => {
-        issues.push(i)
-    })
+    issues.update(req.body)
 
     res.status(200).send()
 })
