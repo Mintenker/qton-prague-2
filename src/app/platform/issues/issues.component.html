@@ -29,16 +29,18 @@
     <button mat-raised-button color="primary" (click)="confirmNewSource()">Přidat</button>
   </mat-expansion-panel>
 
-  <div class="issue" *ngFor="let issue of issues">
-    <img src="assets/icons/fb.svg" class="issues-icon">
-    <div class="issue-content">
-      <div class="time">{{issue.status_published}}</div>
-      <div class="description">{{issue.status_message}}</div>
-      <div class="keywords">
-        <mat-chip class="keyword" *ngFor="let keyword of getKeywords(issue)">{{keyword}}</mat-chip>
+  <ng-container *ngFor="let issue of issues">
+    <div class="issue"  *ngIf="issue.status_message != null && issue.status_published != null">
+      <img src="assets/icons/fb.svg" class="issues-icon">
+      <div class="issue-content">
+        <div class="time">{{issue.status_published}}</div>
+        <div class="description">{{issue.status_message}}</div>
+        <div class="keywords">
+          <mat-chip class="keyword" *ngFor="let keyword of getKeywords(issue)">{{keyword}}</mat-chip>
+        </div>
       </div>
     </div>
-  </div>
+  </ng-container>
 
 
 </div>

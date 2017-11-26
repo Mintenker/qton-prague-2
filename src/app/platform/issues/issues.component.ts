@@ -54,6 +54,7 @@ export class IssuesComponent {
       return issue.keywords;
     }
     return issue.keywords.map(keyword => this.keywords[keyword])
+      .filter(item => item != null)
       .sort((x, y) => x.n - y.n)
       .slice(0, 10)
       .map(item => item.val);
