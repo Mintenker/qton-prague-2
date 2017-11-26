@@ -1,7 +1,7 @@
 <div class="issues-container">
   <mat-expansion-panel style="width: 100%">
     <mat-expansion-panel-header>
-      <mat-panel-title>
+      <mat-panel-title class="issues-source-title">
         Zdroje dat
       </mat-panel-title>
       <mat-panel-description>
@@ -10,22 +10,23 @@
     </mat-expansion-panel-header>
 
     <mat-list dense>
-        <mat-list-item>
-            Facebook
-        </mat-list-item>
+      <mat-list-item class="source-item" *ngFor="let source of sources">
+        <img src="assets/icons/fb.svg" class="source-icon">
+        <div class="source-label">{{source.source}}</div>
+      </mat-list-item>
     </mat-list>
-    
+
     <mat-form-field>
-      <input matInput placeholder="URL na zdroj">
+      <input matInput placeholder="URL na zdroj" [(ngModel)]="newSource">
     </mat-form-field>
     <mat-form-field>
-    <mat-select placeholder="Adaptér">
-      <mat-option>
-        Facebook
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-    <button mat-raised-button color="primary">Přidat</button>            
+      <mat-select placeholder="Adaptér">
+        <mat-option [value]="'Facebook'">
+          Facebook
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="confirmNewSource()">Přidat</button>
   </mat-expansion-panel>
 
   <div class="issue" *ngFor="let issue of issues">

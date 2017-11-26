@@ -7,6 +7,7 @@ export class DatabaseService {
 
   $issues = new ReplaySubject<any[]>(1);
   $keywords = new ReplaySubject<any>(1);
+  $sources = new ReplaySubject<any[]>(1);
 
   constructor(private db: AngularFirestore) {
 
@@ -35,5 +36,20 @@ export class DatabaseService {
       }
     );
   }
+
+  getSources(): void {
+    this.db.collection('complete').valueChanges().subscribe(
+      data => {
+        if (data != null) {
+          this.$sources.next(data);
+        }
+      }
+    );
+  }
+
+  createSource(url: string): void {
+    this.db.collection('sources').doc(url).set({source: url});
+  }
+
 }
 

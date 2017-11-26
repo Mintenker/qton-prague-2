@@ -47,3 +47,20 @@
     }
   }
 }
+
+.source-item {
+  display: flex;
+
+  .source-icon {
+    height: 20px;
+  }
+
+  .source-label {
+    margin-left: 6px;
+    font-size: 14px;
+  }
+}
+
+.issues-source-title {
+  font-weight: bold;
+}

@@ -11,16 +11,21 @@ import { IssueModel } from '../../shared/issue.model';
 export class IssuesComponent {
 
   issues: IssueModel[] = [];
+  newSource: string;
   keywords: {
     [column: string]: {
       n: number;
       val: string;
     }
   };
+  sources: {
+    source: string;
+  }[] = [];
 
   constructor(private service: DatabaseService) {
     this.service.getIssues();
     this.service.getKeywords();
+    this.service.getSources();
 
     this.service.$issues.subscribe(
       data => {
@@ -31,6 +36,12 @@ export class IssuesComponent {
     this.service.$keywords.subscribe(
       data => {
         this.keywords = data;
+      }
+    );
+
+    this.service.$sources.subscribe(
+      data => {
+        this.sources = data;
       }
     );
   }
@@ -46,5 +57,10 @@ export class IssuesComponent {
       .sort((x, y) => x.n - y.n)
       .slice(0, 10)
       .map(item => item.val);
+  }
+
+  confirmNewSource(): void {
+    this.service.createSource(this.newSource);
+    this.newSource = '';
   }
 }
