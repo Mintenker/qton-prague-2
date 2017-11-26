@@ -1,15 +1,17 @@
 import { CommentModel } from './comment.model';
 import { ResultModel } from './result.model';
+import { StatusType } from './mocks';
 
 export interface ProjectModel {
   id: number;
   name: string;
-  status: string;
+  status: StatusType;
   location: string;
   budget: number;
   budgetCurrency: string;
   description: string;
   longDescription: string;
+  category: string;
   issues?: {
     fkIssue: number;
     comments: CommentModel[];

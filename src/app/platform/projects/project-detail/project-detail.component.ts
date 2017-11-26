@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProjectModel } from '../../../shared/project.model';
+import { MOCK_PROJECTS } from '../../../shared/mocks';
 
 @Component({
   selector: 'app-project-detail',
@@ -8,8 +10,14 @@ import { Router } from '@angular/router';
 })
 export class ProjectDetailComponent {
 
-  constructor(private router: Router) {
+  project: ProjectModel;
 
+  constructor(private route: ActivatedRoute, private router: Router) {
+    this.route.params.subscribe(
+      (params: { id: string }) => {
+        this.project = MOCK_PROJECTS.find(({id}) => id === +params.id);
+      }
+    );
   }
 
 

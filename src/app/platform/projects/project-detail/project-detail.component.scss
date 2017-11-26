@@ -13,6 +13,10 @@
       .pd-status-item {
         font-size: 50px;
         color: #cccccc;
+
+        &.rotate {
+          transform: rotate(45deg);
+        }
       }
 
       .pd-header {
@@ -36,4 +40,11 @@
       }
     }
   }
+}
+
+.map-container {
+  margin: 24px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

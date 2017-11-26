@@ -1,9 +1,11 @@
 <div class="projects-container">
-  <div class="project" (click)="redirectToDetail(5)">
-    <i class="material-icons project-status-icon">check_circle</i>
+  <div class="project" *ngFor="let project of projects" (click)="redirectToDetail(project.id)">
+    <i class="material-icons project-status-icon" *ngIf="project.status === 'done'">check_circle</i>
+    <i class="material-icons project-status-icon" *ngIf="project.status === 'in_progress'">swap_vertical_circle</i>
+    <i class="material-icons project-status-icon rotate" *ngIf="project.status === 'canceled'">add_circle</i>
     <div class="project-content">
-      <div class="project-title">Projekt 1</div>
-      <div class="project-description">Lorem ipsum dolor sit amet</div>
+      <div class="project-title">{{project.name}}</div>
+      <div class="project-description">{{project.description}}</div>
     </div>
   </div>
 </div>

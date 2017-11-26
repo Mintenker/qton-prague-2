@@ -1,15 +1,29 @@
-<div class="pd-container">
+<div class="pd-container" *ngIf="project != null">
   <mat-card class="project-detail">
     <div class="pd-first-row">
-      <i class="material-icons pd-status-item">check_circle</i>
+      <i class="material-icons pd-status-item" *ngIf="project.status === 'done'">check_circle</i>
+      <i class="material-icons pd-status-item" *ngIf="project.status === 'in_progress'">swap_vertical_circle</i>
+      <i class="material-icons pd-status-item rotate" *ngIf="project.status === 'canceled'">add_circle</i>
       <div class="pd-header">
-        <mat-card-title class="pd-title">Best project ever</mat-card-title>
+        <mat-card-title class="pd-title">{{project.name}}</mat-card-title>
         <div class="pd-subtitle">
-          <div class="pd-budget">{{100000 | number}} CZK</div>
-          <mat-chip color="primary" class="pd-category">Category</mat-chip>
+          <div class="pd-budget">{{project.budget | number}} CZK</div>
+          <mat-chip color="primary" class="pd-category">{{project.category}}</mat-chip>
         </div>
       </div>
+    </div>
+    <div class="map-container">
+      <iframe
+        width="600"
+        height="450"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD415cmYer5BUDx4gIj9WqM3kKyHSQJxYA&q=Praha+Forum+Karlin"
+        allowfullscreen>
+      </iframe>
+    </div>
 
+    <div class="pd-description">
+      {{project.description}}
     </div>
   </mat-card>
 </div>

@@ -22,6 +22,10 @@
     .project-status-icon {
       font-size: 50px;
       color: #cccccc;
+
+      &.rotate {
+        transform: rotate(45deg);
+      }
     }
 
     .project-content {
@@ -36,7 +40,6 @@
       .project-location {
         font-size: 14px;
       }
-
 
       .project-description {
 
