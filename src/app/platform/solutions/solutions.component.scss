@@ -36,12 +36,18 @@ $solution-image-height: 250px;
       width: 100%;
     }
 
-    .solution-title {
+    .solution-title-container {
       position: absolute;
       bottom: 10px;
-      left: 24px;
-      color: $contrast-color;
-      font-weight: bold;
+      left: 0;
+      padding: 0 24px;
+      width: 100%;
+
+      .solution-title {
+        color: $contrast-color;
+        font-weight: bold;
+        text-shadow: 3px 3px #000000;
+      }
     }
   }
 

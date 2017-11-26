@@ -15,6 +15,6 @@ export interface SolutionModel {
     location: string;
     historicalResults?: ResultModel[];
     image: string;
-    referenceVendor: string;
-    referenceCity: string;
+    referenceVendor?: string;
+    referenceCity?: string;
 }

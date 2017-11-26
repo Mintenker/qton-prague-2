@@ -1,64 +1,42 @@
-<div *ngIf="solution != null">
-    Solution --> ID: {{solution.id}}, Name: {{solution.title}}
-    <button mat-raised-button color="primary" (click)="redirectToList()">Back</button>
+<div *ngIf="solution != null" class="sd-container">
 
-    <mat-card class="card">
-        <div class="solution-header">
-            <mat-card-title class="solution-title">{{solution.title}}</mat-card-title>
+  <mat-card class="solution-detail">
+    <div class="sd-header">
+      <img [src]="solution.image" class="sd-image">
+      <mat-card-title class="sd-title">{{solution.title}}</mat-card-title>
+    </div>
+
+    <div class="sd-content">
+      <div class="sd-description">{{solution.longDescription}}</div>
+      <div class="sd-divider"></div>
+
+      <div class="sd-info">
+        <div class="sd-info-column">
+          <div class="sd-info-item sd-info-label">Mesto</div>
+          <div class="sd-info-item sd-info-label">Kategorie</div>
+          <div class="sd-info-item sd-info-label">Rozpocet</div>
+          <div class="sd-info-item sd-info-label">Rok</div>
+          <div class="sd-info-item sd-info-label">Provozovatel</div>
+          <div class="sd-info-item sd-info-label">Status</div>
+
         </div>
-s        <div class="solution-content">
-            <table style="width:100%">
-                <tr>
-                    <th rowspan="6" width="50%"><img src={{solution.image}} class="image"></th>
-                    <th></th>
-                    <th>souhrn</th>
-                </tr>
-                <tr>
-                    <th></th>
-                    <th>cena realizace</th>
-                    <th>{{solution.budget}} CZK</th>
-                </tr>
-                <tr>
-                    <th></th>
-                    <th>rok realizace</th>
-                    <th>{{solution.year}}</th>
-                </tr>
-                <tr>
-                    <th></th>
-                    <th>stav realizace</th>
-                    <th>{{solution.status}}</th>
-                </tr>
-                <tr>
-                    <th></th>
-                    <th>lokalita</th>
-                    <th>{{solution.location}}</th>
-                </tr>
-                <tr>
-                    <th></th>
-                    <th>kategorie</th>
-                    <th>{{solution.category}}</th>
-                </tr>
-            </table>
+
+        <div class="sd-info-column">
+          <div class="sd-info-item sd-info-value">{{solution.location}}</div>
+          <div class="sd-info-item sd-info-value">{{solution.category}}</div>
+          <div class="sd-info-item sd-info-value">{{(solution.budget || 0) | number}} CZK</div>
+          <div class="sd-info-item sd-info-value">{{solution.year}}</div>
+          <div class="sd-info-item sd-info-value">{{solution.vendor}}</div>
+          <div class="sd-info-item sd-info-value">{{solution.status}}</div>
+
         </div>
-       {{solution.longDescription}}>
-          <table style="width:100%">
-            <tr>
-                <th rowspan="6" width="50%"></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr>
-                <th></th>
-                <th><mat-form-field>
-                    <input matInput placeholder="Realizator" disabled value="{{solution.referenceVendor}}">
-                </mat-form-field></th>
-                <th><mat-form-field>
-                    <input matInput placeholder="Zadavatel" disabled value="{{solution.referenceCity}}">
-                </mat-form-field></th>
-            </tr>
-        </table>
+      </div>
+
+      <div class="sd-divider"></div>
+      <button mat-raised-button color="primary" (click)="redirectToList()">Zpet</button>
+    </div>
 
 
-    </mat-card>
+  </mat-card>
 
 </div>

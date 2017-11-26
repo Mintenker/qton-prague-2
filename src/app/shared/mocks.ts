@@ -9,10 +9,7 @@ export const MOCK_SOLUTIONS: SolutionModel[] = [
         vendor: 'Operator ICT, a.s.',
         title: 'Chytré odpadkové koše',
         description: 'Koše umožnují notifikace o stavu naplnění, přístup k wifi',
-        longDescription: 'Speciálně vybavené lavičky umožní Pražanům a návštěvníkům hlavního města kromě běžné relaxace ' +
-        'a odpočinku dobít si telefon či tablet, připojit se k internetu, zjistit aktuální teplotu a vlhkost vzduchu nebo' +
-        ' množství oxidu uhličitého v ovzduší. A to vše přímo ve veřejném prostoru města bez napojení na zdroj elektrické ' +
-        'energie – lavičky se napájí pomocí solárních panelů.',
+        longDescription: 'Koše umožnují notifikace o stavu naplnění, přístup k wifi',
         comments: [],
         historicalResults: [],
         budget: 200000,
@@ -27,7 +24,10 @@ export const MOCK_SOLUTIONS: SolutionModel[] = [
         vendor: 'Operator ICT, a.s.',
         title: 'Chytrá lavička',
         description: 'Lavička disponuje wifi pripojenim, nabíjením telefonů a senzory pro měření',
-        longDescription: '',
+        longDescription: 'Speciálně vybavené lavičky umožní Pražanům a návštěvníkům hlavního města kromě běžné relaxace ' +
+        'a odpočinku dobít si telefon či tablet, připojit se k internetu, zjistit aktuální teplotu a vlhkost vzduchu nebo' +
+        ' množství oxidu uhličitého v ovzduší. A to vše přímo ve veřejném prostoru města bez napojení na zdroj elektrické ' +
+        'energie – lavičky se napájí pomocí solárních panelů.',
         comments: [],
         historicalResults: [],
         budget: 70000,

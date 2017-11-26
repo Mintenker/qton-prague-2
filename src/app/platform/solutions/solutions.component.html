@@ -3,7 +3,10 @@
   <mat-card class="solution" *ngFor="let solution of solutions" (click)="redirectToDetail(solution.id)">
     <div class="solution-header">
       <img src={{solution.image}} class="solution-image">
-      <mat-card-title class="solution-title">{{solution.title}}</mat-card-title>
+      <div class="solution-title-container">
+        <mat-card-title class="solution-title">{{solution.title}}</mat-card-title>
+      </div>
+
     </div>
     <div class="solution-content">
       <div class="solution-description">{{solution.description}}</div>
