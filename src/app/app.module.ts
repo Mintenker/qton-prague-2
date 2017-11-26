@@ -15,6 +15,9 @@ import {
   MatToolbarModule
 } from '@angular/material';
 import { SolutionDetailComponent } from './platform/solutions/solution-detail/solution-detail.component';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 
 @NgModule({
@@ -32,6 +35,8 @@ import { SolutionDetailComponent } from './platform/solutions/solution-detail/so
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatSidenavModule,
