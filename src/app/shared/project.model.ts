@@ -13,14 +13,14 @@ export interface ProjectModel {
   longDescription: string;
   category: string;
   issues?: {
-    fkIssue: number;
-    comments: CommentModel[];
+    fkIssue?: number;
+    comments?: CommentModel[];
   }[];
   solutions?: {
-    fkSolution: number;
-    comments: CommentModel[];
-    result: ResultModel;
-  };
+    fkSolution?: number;
+    comments?: CommentModel[];
+    result?: ResultModel;
+  }[];
   documents?: {
     name: string;
     link: string;

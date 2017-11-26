@@ -1,5 +1,5 @@
 export interface CommentModel {
-  author: string;
-  content: string;
-  status: string;
+  author?: string;
+  content?: string;
+  status?: string;
 }
