@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class DatabaseService {
@@ -20,6 +21,20 @@ export class DatabaseService {
         }
       }
     );
+  }
+
+  postSource(s: string): any {
+    this.db.collection('sources').doc(s).set({
+      source: s,
+    });
+  }
+
+  getSources(): any {
+    return this.db.collection('sources').valueChanges();
+  }
+
+  getComplete(): any {
+    return this.db.collection('complete').valueChanges();
   }
 
   getKeywords(): void {

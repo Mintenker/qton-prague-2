@@ -35,6 +35,18 @@ export class IssuesComponent {
     );
   }
 
+  createSource(s: string) {
+    this.service.postSource(s);
+  }
+
+  getComplete(): any {
+    return this.service.getComplete();
+  }
+
+  getSources(): any {
+    return this.service.getSources();
+  }
+
   getKeywords(issue: IssueModel): string[] {
     if (issue.keywords == null) {
       return [];
