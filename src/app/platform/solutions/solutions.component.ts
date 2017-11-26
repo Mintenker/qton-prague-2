@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SolutionModel } from '../../shared/solution.model';
 import { MOCK_SOLUTIONS } from '../../shared/mocks';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-solutions',
@@ -10,4 +11,12 @@ import { MOCK_SOLUTIONS } from '../../shared/mocks';
 export class SolutionsComponent {
 
   solutions: SolutionModel[] = MOCK_SOLUTIONS;
+
+  constructor(private router: Router) {
+
+  }
+
+  redirectToDetail(id: number): void {
+    this.router.navigateByUrl(`platform/solutions/${id}`);
+  }
 }
