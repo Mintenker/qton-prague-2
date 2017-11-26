@@ -1,5 +1,5 @@
 export interface IssueModel {
-  keywords: any[];
+  keywords: {[column: string]: string};
   status_message: string;
   link_name: string;
   status_type: string;

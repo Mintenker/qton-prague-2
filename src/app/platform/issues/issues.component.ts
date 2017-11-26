@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DatabaseService } from '../../shared/database.service';
+import { IssueModel } from '../../shared/issue.model';
 
 @Component({
   selector: 'app-issues',
@@ -9,11 +10,19 @@ import { DatabaseService } from '../../shared/database.service';
 })
 export class IssuesComponent {
 
+  issues: IssueModel[] = [];
+
   constructor(private service: DatabaseService) {
-    this.service.getIssues().subscribe(
+    this.service.getIssues();
+
+    this.service.$issues.subscribe(
       data => {
-        console.log(data);
+        this.issues = data;
       }
     );
+  }
+
+  getKeywords(issue: IssueModel): string[] {
+    return Object.keys(issue.keywords).map((key: string) => issue.keywords[key]);
   }
 }

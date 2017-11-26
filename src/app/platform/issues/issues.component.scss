@@ -13,6 +13,7 @@
     margin: 12px;
     padding: 16px;
     cursor: pointer;
+    width: 100%;
 
     &:hover {
       box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
@@ -30,6 +31,18 @@
         color: #c0c0c0;
         font-size: 16px;
         margin-bottom: 8px;
+      }
+
+      .keywords {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 12px;
+
+        .keyword {
+          padding: 4px;
+          border-radius: 4px;
+          margin: 2px;
+        }
       }
     }
   }

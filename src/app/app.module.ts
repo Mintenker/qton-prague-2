@@ -11,7 +11,7 @@ import { ProjectsComponent } from './platform/projects/projects.component';
 import { SolutionsComponent } from './platform/solutions/solutions.component';
 import { FormsModule } from '@angular/forms';
 import {
-  MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatListModule, MatSidenavModule,
+  MatButtonModule, MatCardModule, MatChipsModule, MatFormFieldModule, MatInputModule, MatListModule, MatSidenavModule,
   MatToolbarModule
 } from '@angular/material';
 import { SolutionDetailComponent } from './platform/solutions/solution-detail/solution-detail.component';
@@ -45,6 +45,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     MatInputModule,
     MatCardModule,
     MatListModule,
+    MatChipsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
