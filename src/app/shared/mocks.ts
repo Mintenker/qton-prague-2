@@ -24,7 +24,7 @@ export const MOCK_SOLUTIONS: SolutionModel[] = [
         vendor: 'Operator ICT, a.s.',
         title: 'Chytrá lavička',
         description: 'Lavička disponuje wifi pripojenim, nabíjením telefonů a senzory pro měření',
-        longDescription: 'Speciálně vybavené lavičky umožní Pražanům a návštěvníkům hlavního města kromě běžné relaxace ' +
+        longDescription: 'Speciálně vybavené lavičky umožnují návštěvníkům a obyvatelům města kromě běžné relaxace ' +
         'a odpočinku dobít si telefon či tablet, připojit se k internetu, zjistit aktuální teplotu a vlhkost vzduchu nebo' +
         ' množství oxidu uhličitého v ovzduší. A to vše přímo ve veřejném prostoru města bez napojení na zdroj elektrické ' +
         'energie – lavičky se napájí pomocí solárních panelů.',
@@ -42,7 +42,7 @@ export const MOCK_SOLUTIONS: SolutionModel[] = [
         status: 'probíhá realizace',
         category: 'categorie',
         vendor: 'Dumb Prague',
-        title: 'Chytré městcké osvětlení',
+        title: 'Chytré městské osvětlení',
         description: 'Wifi připojení, dobijění elektromobilů, automaticka intensita světla',
         longDescription: 'Dumb lavicky su celkovo dost dobre :D',
         comments: [],

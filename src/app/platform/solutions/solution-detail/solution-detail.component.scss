@@ -43,11 +43,14 @@ $sd-content-padding: 24px;
   }
 }
 
+.header {
+  font-weight: bold;
+}
+
 .sd-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 
   .sd-info-column {
     width: 50%;
