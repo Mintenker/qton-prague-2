@@ -1,0 +1,36 @@
+@import '_variables';
+
+.issues-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 18%;
+
+  .issue {
+    display: flex;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin: 12px;
+    padding: 16px;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    }
+
+    .issues-icon {
+      height: 48px;
+      margin-right: 12px;
+    }
+
+    .issue-content {
+      font-size: 18px;
+
+      .time {
+        color: #c0c0c0;
+        font-size: 16px;
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
